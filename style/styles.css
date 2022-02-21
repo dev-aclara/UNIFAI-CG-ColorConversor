@@ -20,14 +20,14 @@
   }
 
   .container{
-    width: 460px;
-    height: 530px;
     border-radius: 12px;
     flex-direction: column;
     display: flex;
     background-color: white;
     padding: 0px 30px 45px 30px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.0), 0 6px 6px rgba(0,0,0,0.20);
+    height: auto;
+    width: auto;
   }
   
   .header{
@@ -68,23 +68,25 @@ a:link, a:visited,  a:hover, a:active{
 }
 
 .spanRGB{
-    padding: 10px 0px;
-    font-size: 15px;
-    color: #C62E65;
+  padding: 10px 0px;
+  font-size: 15px;
+  color: #C62E65;
 }
 
 .rgbInput{
-    padding: 12px;
-    border-radius: 10px;
-    border: 3px solid #C62E65;
+  padding: 12px;
+  border-radius: 10px;
+  border: 3px solid #C62E65;
 }
 
 .resultCMYK{
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #C62E65;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #C62E65;
 }
 
 p, a href{
-  color: #C62E65;
+color: #C62E65;
 }
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <meta charset="utf-8"/>
+       <title>Conversor de Cores</title>
+       <link href="..\style\styles.css" rel="stylesheet">
+   </head>
+   <body>
+       <div class="container">
+           <div class="header">
+               <span>CMYK x RGB</span>
+           </div>
+
+           <button onClick="history.go(-1)">Retornar ao menu</button>
+           <button onClick="history.go(0)">Atualizar</button>
+
+            <span class="spanRGB">Cyan color (C):</span>
+                <input id="valC" class="rgbInput" type="number" placeholder="Ex: 0 a 100%"/>
+            <span class="spanRGB">Magenta color (M)</span>
+                <input id="valM" class="rgbInput" type="number" placeholder="Ex: 0 a 100%"/>
+            <span class="spanRGB">Yellow color (Y)</span>
+                <input id="valY" class="rgbInput" type="number" placeholder="Ex: 0 a 100%"/>
+            <span class="spanRGB">Black key color (K)</span>
+                <input id="valK" class="rgbInput" type="number" placeholder="Ex: 0 a 100%"/>
+           
+
+
+            <button onclick="secondconvert()">Converter</button>
+            <p>Resultado RGB</p>
+            <br>
+            <p id="vR"> </p>
+            <p id="vG"> </p>
+            <p id="vB"> </p>
+            <br>
+          
+       </div>
+       
+       <script type="text/javascript" src="..\js\convert.js"></script>
+   </body>
+</html>
