@@ -119,8 +119,8 @@ function secondconvert(){
     vG = Math.round(valueG);
     vB = Math.round(valueB) ;
 
-    document.getElementById('vR').innerHTML = vR.toFixed(0);
-    document.getElementById('vG').innerHTML = vG.toFixed(0);
+    document.getElementById('vR').innerHTML = vR.toFixed(0) + ",";
+    document.getElementById('vG').innerHTML = vG.toFixed(0) + ",";
     document.getElementById('vB').innerHTML = vB.toFixed(0);
  
 }

@@ -89,4 +89,14 @@ p, a href{
 color: #C62E65;
 }
 
+.resultado{
+  display: flex;
+  color: #C62E65;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(242, 2, 92, 0.20), 0 6px 6px rgba(0,0,0,0.20);
+  border-radius: 12px;
+  height: 40px;
+}
+
 
