@@ -8,31 +8,29 @@
    <body>
        <div class="container">
            <div class="header">
-               <span>RGB x CMYK</span>
+               <span>RGB x HSV</span>
            </div>
 
            <button onClick="history.go(-1)">Retornar ao menu</button>
            <button onClick="history.go(0)">Atualizar</button>
 
-            <span class="spanRGB">Red</span>
+           <span class="spanRGB">Red</span>
                 <input id="valRed" class="rgbInput" type="number" placeholder="Ex: 255"/>
             <span class="spanRGB">Green</span>
                 <input id="valGreen" class="rgbInput" type="number" placeholder="Ex: 255"/>
             <span class="spanRGB">Blue</span>
                 <input id="valBlue" class="rgbInput" type="number" placeholder="Ex: 255"/>
 
-            <button onclick="firstconvert()">Converter</button>
-            <p>Resultado CMYK</p>
+            <button onclick="fourthconvert()">Converter</button>
+            <p>Resultado HSV</p>
             <br>
             <div class="resultado">
-                <span id="rC"> </span>
-                <span id="rM"> </span>
-                <span id="rY"> </span>
-                <span id="rK"> </span>
+                <span id="rH"> </span>
+                <span id="rS"> </span>
+                <span id="rV"> </span>
             </div>
-            
             <br>
-
+          
        </div>
        
        <script type="text/javascript" src="..\js\convert.js"></script>

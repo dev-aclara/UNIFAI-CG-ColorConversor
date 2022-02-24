@@ -11,9 +11,6 @@ function firstconvert(){
     var valueY = 0;
     var valueK = 0;
 
-    console.log(valueC);
-
-
     //Confirmando os valores de entrada no Console
     console.log("Red:" + R);
     console.log("Green:" + G);
@@ -113,7 +110,6 @@ function secondconvert(){
     // B é calculado a partir de amarelo (Y) e preto (K)
     valueB = 255 * (1 - Y) * (1 - K);
         
-
     // Arredondando os resultados 
     vR = Math.round(valueR);
     vG = Math.round(valueG);
@@ -123,4 +119,155 @@ function secondconvert(){
     document.getElementById('vG').innerHTML = vG.toFixed(0) + ",";
     document.getElementById('vB').innerHTML = vB.toFixed(0);
  
+}
+
+function thirdconvert(){
+    //Lendo os valores RGB
+   // Utilizando a função parseInt nos valores de entrada
+   var H = parseInt(document.getElementById('valH').value);
+   var S = parseInt(document.getElementById('valS').value);
+   var V = parseInt(document.getElementById('valV').value);
+   
+   var valueR = 0;
+   var valueG = 0;
+   var valueB = 0;
+
+   //Verificando se todos os valores estão preenchidos
+   if ( H == null || S == null || V == null || isNaN(H) || isNaN(S)|| isNaN(V) ){
+     alert ('Por favor, preencha todos os campos corretamente!');
+     return false;
+   }
+
+   console.log((360/60)%6);
+  
+   if ( S !== 0 ){
+
+    var i = (H/60) % 6;
+    console.log(i);
+    var f = (H/60) - i;
+    console.log(i);
+    var p = V * (1 - S);
+    console.log(i);
+    var q = V * (1 - f * S);
+    console.log(q);
+    var t = V * (1 - (1 - f) * S);
+    console.log(t);
+
+    if ( i == 0){
+        valueR = V;
+        valueG = t;
+        valueB = p; 
+    }
+    else if ( i == 1){
+        valueR = q;
+        valueG = V;
+        valueB = p;
+    }
+    else if ( i == 2){
+        valueR = p;
+        valueG = V; 
+        valueB = t;
+    }
+    else if ( i == 3){
+        valueR = p;
+        valueG = q;
+        valueB = V;
+    }
+    else if ( i == 4){
+        valueR = t;
+        valueG = p;
+         valueB = V;
+    }
+    else if ( i == 5){
+        valueR = V;
+        valueG = p;
+        valueB = q;
+    }
+
+   // Arredondando os resultados
+   rR = Math.round(valueR);
+   rG = Math.round(valueG);
+   rB = Math.round(valueB) ;
+
+   document.getElementById('rR').innerHTML = rR.toFixed(0) + ",";
+   document.getElementById('rG').innerHTML = rG.toFixed(0) + ",";
+   document.getElementById('rB').innerHTML = rB.toFixed(0);
+}
+
+function fourthconvert(){
+     //Lendo os valores RGB
+    // Utilizando a função parseInt nos valores de entrada
+    var R = parseInt(document.getElementById('valRed').value);
+    var G = parseInt(document.getElementById('valGreen').value);
+    var B = parseInt(document.getElementById('valBlue').value);
+    
+    var R_linha = R/255;
+    var G_linha = G/255;
+    var B_linha = B/255;
+
+    var valueH = 0;
+    var valueS = 0;
+    var valueV = 0;
+
+    //Confirmando os valores de entrada no Console
+    console.log("Red:" + R);
+    console.log("Green:" + G);
+    console.log("Blue:" + B);
+
+    //Verificando se todos os valores estão preenchidos
+    if ( R == null || G == null || B == null || isNaN(R) || isNaN(G)|| isNaN(B) ){
+      alert ('Por favor, preencha todos os campos corretamente!');
+      return false;
+    }
+    
+    //Verificando se os valores são menores que 0 e maiores que 255
+    if ( R < 0 || G < 0 || B <0 || R > 255 || G > 255 || B > 255) {
+        alert ('Os valores para RGB só podem ser de 0 até 255!');
+        console.log('Os valores para RGB só podem ser de 0 até 255!');
+        return;
+    }
+
+    var max = Math.max(R_linha, G_linha, B_linha);
+    var min = Math.min(R_linha, G_linha, B_linha);
+
+    var delta = max - min;
+
+    if ( max == min ){
+        valueH = undefined;
+    }
+
+    if ( max == R_linha && G_linha >= B_linha ){
+        valueH = 60 * ((G_linha - B_linha) / delta);
+    }
+    
+    if ( max == R_linha && G_linha < B_linha ){
+        valueH = 60 * ((G_linha - B_linha) / delta ) + 360;
+    }
+
+    if ( max == G_linha ){
+        valueH = 60 * ((B_linha - R_linha) / delta ) + 120;
+    }
+    
+    if ( max == B_linha ){
+        valueH = 60 * ((R_linha - G_linha) / delta ) + 240;
+    }
+
+    if ( max == 0 ){
+        valueS = 0
+    }
+    else if ( max != 0 ){
+        valueS = 1 - ( min / max );
+    }
+
+    valueV = max;
+
+    // Arredondando os resultados e colocando em forma de porcentagem
+    rH = Math.round(valueH);
+    rS = Math.round(valueS * 100);
+    rV = Math.round(valueV * 100) ;
+
+    document.getElementById('rH').innerHTML = rH.toFixed(0) + "°";
+    document.getElementById('rS').innerHTML = rS.toFixed(0) + "%";
+    document.getElementById('rV').innerHTML = rV.toFixed(0) + "%";
+}
 }
