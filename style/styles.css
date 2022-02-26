@@ -99,4 +99,10 @@ color: #C62E65;
   height: 40px;
 }
 
-
+.rodape{
+  color: white;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  text-align: center;
+}
